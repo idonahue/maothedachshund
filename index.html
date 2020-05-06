@@ -52,10 +52,13 @@
             height: 100px;
             position: fixed;
             z-index: 300;
+            display: flex;
+            align-items: center;
           }
 
           .top-nav {
-            height: 100%;
+            height: 40px;
+            width: 100%;
             display: flex;
             justify-content: space-between;
             align-items: center;
@@ -66,6 +69,15 @@
           .link a {
             text-decoration: none;
             color: white;
+          }
+          .link .instagram {
+            /* display: none; */
+            height: 40px;
+            width: 40px;
+            background-image: url("img/instagram-logo.svg");
+            background-size: 28px;
+            background-position: center;
+            background-repeat: no-repeat;
           }
 
           .branding {
@@ -127,6 +139,10 @@
             margin-right: auto;
           }
 
+          .mao-image-container img {
+            width: 100%;
+          }
+
           .mao-image {
             max-height: 700px;
             height: 80%;
@@ -135,6 +151,76 @@
             width: 100%;
             min-width: 300px;
             background-image: url("img/maothedachshund-side-view.png");
+          }
+
+
+
+          @media only screen and (max-width: 414px) {
+            .color-overlay,
+            .mao-logo-container {
+              pointer-events: none;
+            }
+            .mao-logo-container {
+              align-items: flex-end;
+              display: none;
+            }
+            .logo-overlay {
+              width: 90%;
+            }
+            .mao-image-container {
+              width: 100%;
+              overflow-x: scroll;
+              position: relative;
+            }
+
+            .mao-image-container img {
+              width: 910px;
+              position: relative;
+              top: 40px;
+              left: 320px;
+            }
+            .mao-image {
+              background-size: 930px;
+              background-position: 20px center;
+            }
+          }
+
+          @media only screen and (max-width: 411px) {
+            .mao-image-container img {
+              width: 900px;
+              top: 40px;
+              left: 305px;
+              /* left: 400px; -  Default  */
+            }
+          }
+
+          /* iPhone 6/7/8 */
+          @media only screen and (max-width: 375px) {
+            .mao-image-container img {
+              width: 810px;
+              top: 40px;
+              left: 280px;
+              /* left: 400px; -  Default  */
+            }
+          }
+
+          /* Pixel / Pixel XL */
+          @media only screen and (max-width: 360px) {
+            .mao-image-container img {
+              width: 770px;
+              top: 40px;
+              left: 260px;
+            }
+          }
+
+          /* iPhone 5/SE */
+          @media only screen and (max-width: 320px) {
+            .mao-image-container img {
+              width: 660px;
+              top: 40px;
+              left: 247px;
+              /* left: 400px; -  Default  */
+            }
           }
 
         </style>
@@ -154,7 +240,9 @@
               <div class="top-nav">
                 <div class="branding  mao"></div>
                 <div class="link">
-                  <a href="https://instagram.com/maothedachshund" target="_blank">@maothedachshund</a>
+                  <a href="https://instagram.com/maothedachshund" target="_blank">
+                    <div class="instagram"></div>
+                  </a>
                 </div>
               </div>
             </div>
@@ -168,7 +256,8 @@
               <div class="color-overlay"></div>
 
               <div class="mao-image-container">
-                <div class="mao-image"></div>
+                <img src="img/maothedachshund-side-view.png" alt="Mao the Dachshund - @maothedachshund">
+                <!-- <div class="mao-image"></div> -->
               </div>
 
             </div>
